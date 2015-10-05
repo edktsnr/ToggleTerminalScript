@@ -1,0 +1,14 @@
+tell application "System Events"
+    set activeApp to first process where it is frontmost
+    if activeApp's name = "Terminal" then
+        # Command-Tab
+        tell application "System Events"
+            key down command
+            keystroke tab
+            key up command
+        end tell
+    else
+        # Open Terminal
+        tell application "Terminal" to activate
+    end if
+end tell
